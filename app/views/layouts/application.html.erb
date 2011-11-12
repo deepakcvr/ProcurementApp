@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= title %></title>
+  <!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->    
+	<%= stylesheet_link_tag "screen", :media => 'screen' %>
+	<%= stylesheet_link_tag "print",  :media => 'print' %>
+	<!--[if lt IE 8]><%= stylesheet_link_tag "ie" %><![endif]-->
+	<%= stylesheet_link_tag "custom", :media => 'screen' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<div class="container">
+      <header>
+        <%= image_tag("Procurement_Logo.png", :alt => "Procurement Software", :class => "round") %>
+        <%= image_tag("zeetimelogo31.png", :alt => "It's a Buyers World", :class => "round") %>              
+        <nav class="round">
+          <ul>
+            <% if signed_in? %>
+            <li><%= link_to "Sign out", signout_path, :method => :delete %></li>
+            <% else %>
+            <li><%= link_to "Sign in", signin_path %></li>
+            <% end %>            
+            <li><%= link_to "Sign up", signup_path %></li>
+          </ul>
+        </nav>
+      </header>
+      <div class="menubar">      
+      <nav2>          
+        <ul>
+          <li><%= link_to "Home", root_path %></li>
+          <li><%= link_to "Sell", sell_path %></li>
+          <li><%= link_to "Buy", buy_path %></li>
+          <li><%= link_to "Contact Us", contact_path %></li>
+        </ul>
+      </nav2>
+      </div>      
+      <section class="round">
+        <% flash.each do |key, value| %>
+          <div class="flash <%= key %>"><%= value %></div>
+        <% end %>
+        <%= yield %>
+      </section>
+      <footer>
+        <table>
+          <tr>
+            <td>
+              <%= image_tag("AllwynCorpLogo.png", :alt => "Allwyn Corp") %>              
+            </td>
+            <td>
+              Powered by Allwyn Corp
+            </td>                        
+          </tr>
+        </table>
+      </footer>
+    </div>
+</body>
+</html>

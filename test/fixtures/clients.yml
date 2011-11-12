@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  login_name: MyString
+  login_password: MyString
+  contact_name: MyString
+  company_name: MyString
+  contact_email: MyString
+  contact_phone: MyString
+  company_website: MyString
+  company_address1: MyString
+  company_address2: MyString
+  company_city: MyString
+  company_state: MyString
+  company_pincode: 1
+  company_country: MyString
+
+two:
+  login_name: MyString
+  login_password: MyString
+  contact_name: MyString
+  company_name: MyString
+  contact_email: MyString
+  contact_phone: MyString
+  company_website: MyString
+  company_address1: MyString
+  company_address2: MyString
+  company_city: MyString
+  company_state: MyString
+  company_pincode: 1
+  company_country: MyString

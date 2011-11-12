@@ -1,0 +1,125 @@
+<%= form_for @client do |f| %>
+</br>
+<p class = "title">Create An Account</p>
+<%= render 'shared/error_messages' %>
+<table>		
+	<tr class = "field">
+		<td>
+			<%= f.label :login_name%>
+		</td>
+		<td>
+			<%= f.text_field :login_name %>
+		</td>
+	</tr>
+	<tr class = "field">
+		<td>
+			<%= f.label :password, "Password"%>
+		</td>
+		<td>
+			<%= f.password_field :password %>
+		</td>
+	</tr>
+	<tr class = "field">
+		<td>
+			<%= f.label :password_confirmation, "Confirm Password"%>
+		</td>
+		<td>
+			<%= f.password_field :password_confirmation %>
+		</td>
+	</tr>
+	<tr class = "field">
+		<td>
+			<%= f.label :contact_name%>
+		</td>
+		<td>
+			<%= f.text_field :contact_name %>
+		</td>
+	</tr>
+	<tr class = "field">
+		<td>
+			<%= f.label :company_name, "Company"%>
+		</td>
+		<td>
+			<%= f.text_field :company_name %>
+		</td>
+	</tr>
+	<tr class = "field">
+		<td>
+			<%= f.label :contact_email, "Email"%>
+		</td>
+		<td>
+			<%= f.text_field :contact_email %>
+		</td>
+	</tr>
+	<tr class = "field">
+		<td>
+			<%= f.label :contact_phone, "Phone"%>
+		</td>
+		<td>
+			<%= f.text_field :contact_phone %>
+		</td>
+	</tr>
+	<tr class = "field">
+		<td>
+			<%= f.label :company_website, "Website"%>
+		</td>
+		<td>
+			<%= f.text_field :company_website %>
+		</td>
+	</tr>
+	<tr class = "field">
+		<td>
+			<%= f.label :company_address1, "Address1"%>
+		</td>
+		<td>
+			<%= f.text_field :company_address1 %>
+		</td>
+	</tr>
+	<tr class = "field">
+		<td>
+			<%= f.label :company_address2, "Address2"%>
+		</td>
+		<td>
+			<%= f.text_field :company_address2 %>
+		</td>
+	</tr>
+	<tr class = "field">
+		<td>
+			<%= f.label :company_city, "City"%>
+		</td>
+		<td>
+			<%= f.text_field :company_city %>
+		</td>
+	</tr>
+	<tr class = "field">
+		<td>
+			<%= f.label :company_state, "State" %>
+		</td>
+		<td>
+			<%= f.text_field :company_state %>
+		</td>
+	</tr>
+	<tr class = "field">
+		<td>
+			<%= f.label :company_pincode, "Zip"%>
+		</td>
+		<td>
+			<%= f.text_field :company_pincode %>
+		</td>
+	</tr>
+	<tr class = "field">
+		<td>
+			<%= f.label :company_country, "Country"%>
+		</td>
+		<td>
+			<%= f.select :company_country, ['United States Of America','India'] %>
+		</td>
+	</tr>
+	<tr class = "field">
+		<td colspan="2" style="text-align:center;">
+			<%= f.submit "Sign Up"%>
+		</td>		
+	</tr>		
+</table>
+<% end %>
+
