@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.1.0'
 
-gem 'bcrypt-ruby', '3.0.1-x86-mingw32'
+#gem 'bcrypt-ruby', '3.0.1-x86-mingw32'
 
 
 # Bundle edge Rails instead:
