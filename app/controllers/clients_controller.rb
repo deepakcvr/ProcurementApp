@@ -16,7 +16,7 @@ class ClientsController < ApplicationController
   	@client = Client.new(params[:client])
   	if @client.save
      sign_in @client
-     flash[:success] = "Congratulations! You have been successfully registered."
+     flash[:success] = "A message will be sent to your email account for verification. Please store your password in a safe place; you are responsible for ensuring that it is not shared with anyone."
   	 redirect_to signin_path 
     else
       render :action => "new"

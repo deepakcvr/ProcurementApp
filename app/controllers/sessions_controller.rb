@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
   def create
   	client = Client.authenticate(params[:session][:username], params[:session][:password])
   	if client.nil?
-  		flash.now[:error] = "Invalid Email / Password."
+  		flash.now[:error] = "Incorrect Login / Password; please re-try. Your account will be locked after 3 unsuccessful attempts."
   		@title = "Sign In"
   		render 'new'
   	else
