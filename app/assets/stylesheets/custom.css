@@ -174,7 +174,7 @@ nav2 ul li a:visited ul li a:visited {text-decoration:none;color:white;} /*Color
 /*Glossy Tab bar*/
 .box-container{
     position:relative;
-    width:800px;
+    width:600px;
     margin:0px auto 0px auto;
     _margin-top:10px;
     overflow:hidden;
@@ -184,7 +184,7 @@ nav2 ul li a:visited ul li a:visited {text-decoration:none;color:white;} /*Color
   .boxgloss{
     background:#FFF;
     position:absolute;
-    width:796px;
+    width:596px;
     height:50%;
     _height:40px;
     top:2px;
@@ -216,6 +216,12 @@ nav2 ul li a:visited ul li a:visited {text-decoration:none;color:white;} /*Color
   }  
   .brd-black{
     border:solid 2px #000000;
+  }
+  .bg-gray{
+    background:#8D8D8D;
+  }  
+  .brd-gray{
+    border:solid 2px #8D8D8D;
   }
   
 
@@ -280,5 +286,21 @@ footer table tr td {text-align:center; color:white; font-weight:bold; font-size:
 #error_explanation ul li {
   font-size: 12px;
   list-style: square;
+}
+.tablepnl
+{
+  /*-moz-border-radius:    10px;
+  -webkit-border-radius: 10px;
+  border-radius:         10px;*/  
+  border:1px solid #B7B7B7;
+  width: 80%;
+}
+.pnlheader{
+  height: 40px;
+  background-color:#8D8D8D;
+  color:white;
+  /*-moz-border-radius:    10px;
+  -webkit-border-radius: 10px;
+  border-radius:         10px;*/
 }
 

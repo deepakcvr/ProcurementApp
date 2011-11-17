@@ -1,125 +1,107 @@
 <%= form_for @client do |f| %>
-</br>
-<p class = "title">Create An Account</p>
+<p class = "title">Join Zeetimes now!!</p>
 <%= render 'shared/error_messages' %>
-<table>		
-	<tr class = "field">
-		<td>
-			<%= f.label :login_name, "Preferred login name"%>
-		</td>
-		<td>
-			<%= f.text_field :login_name %>
+<table align = "center" class="tablepnl" cellpadding="0" cellspacing="0">
+	<tr>
+		<td colspan="2" class = "pnlheader">
+			<%= label_tag 'createAccountHeader', 'Create an Account'%>
 		</td>
 	</tr>
-	<tr class = "field">
+	<tr>
 		<td>
-			<%= f.label :password, "Password"%>
+			<table border="0" style="width: 50%;" align="center">		
+				<tr class = "field">		
+					<td>
+						<%= f.text_field :login_name, :placeholder => "Preferred login name" %>
+					</td>
+				</tr>
+				<tr class = "field">		
+					<td>
+						<%= f.password_field :password, :placeholder => "Password" %>
+					</td>
+				</tr>
+				<tr class = "field">		
+					<td>
+						<%= f.text_field :first_name, :placeholder => "First Name" %>
+					</td>
+				</tr>				
+				<tr class = "field">		
+					<td>
+						<%= f.text_field :contact_email, :placeholder => "Email" %>
+					</td>
+				</tr>				
+				<tr class = "field">		
+					<td>
+						<%= f.text_field :company_website, :placeholder => "Website" %>
+					</td>
+				</tr>
+				<tr class = "field">		
+					<td>
+						<%= f.text_field :company_address1, :placeholder => "Street Address 1" %>
+					</td>
+				</tr>				
+				<tr class = "field">		
+					<td>
+						<%= f.text_field :company_city, :placeholder => "City" %>
+					</td>
+				</tr>				
+				<tr class = "field">		
+					<td>
+						<%= f.text_field :company_pincode, :placeholder => "Pincode" %>
+					</td>
+				</tr>						
+			</table>
 		</td>
 		<td>
-			<%= f.password_field :password %>
-		</td>
-	</tr>
-	<tr class = "field">
-		<td>
-			<%= f.label :password_confirmation, "Re-type password for verification"%>
-		</td>
-		<td>
-			<%= f.password_field :password_confirmation %>
-		</td>
-	</tr>
-	<tr class = "field">
-		<td>
-			<%= f.label :contact_name%>
-		</td>
-		<td>
-			<%= f.text_field :contact_name %>
-		</td>
-	</tr>
-	<tr class = "field">
-		<td>
-			<%= f.label :company_name, "Company"%>
-		</td>
-		<td>
-			<%= f.text_field :company_name %>
-		</td>
-	</tr>
-	<tr class = "field">
-		<td>
-			<%= f.label :contact_email, "Email"%>
-		</td>
-		<td>
-			<%= f.text_field :contact_email %>
-		</td>
-	</tr>
-	<tr class = "field">
-		<td>
-			<%= f.label :contact_phone, "Phone"%>
-		</td>
-		<td>
-			<%= f.text_field :contact_phone %>
-		</td>
-	</tr>
-	<tr class = "field">
-		<td>
-			<%= f.label :company_website, "Website"%>
-		</td>
-		<td>
-			<%= f.text_field :company_website %>
-		</td>
-	</tr>
-	<tr class = "field">
-		<td>
-			<%= f.label :company_address1, "Street Address1"%>
-		</td>
-		<td>
-			<%= f.text_field :company_address1 %>
-		</td>
-	</tr>
-	<tr class = "field">
-		<td>
-			<%= f.label :company_address2, "Street Address2"%>
-		</td>
-		<td>
-			<%= f.text_field :company_address2 %>
-		</td>
-	</tr>
-	<tr class = "field">
-		<td>
-			<%= f.label :company_city, "City"%>
-		</td>
-		<td>
-			<%= f.text_field :company_city %>
-		</td>
-	</tr>
-	<tr class = "field">
-		<td>
-			<%= f.label :company_state, "State" %>
-		</td>
-		<td>
-			<%= f.text_field :company_state %>
-		</td>
-	</tr>
-	<tr class = "field">
-		<td>
-			<%= f.label :company_pincode, "Zip"%>
-		</td>
-		<td>
-			<%= f.text_field :company_pincode %>
-		</td>
-	</tr>
-	<tr class = "field">
-		<td>
-			<%= f.label :company_country, "Country"%>
-		</td>
-		<td>
-			<%= f.select :company_country, ['United States Of America','India'] %>
+			<table border="0" style="width: 50%;" align="center">		
+				<tr class = "field">		
+					<td>
+						<%= f.text_field :company_name, :placeholder => "Company" %>
+					</td>
+				</tr>
+				<tr class = "field">		
+					<td>
+						<%= f.password_field :password_confirmation, :placeholder => "Confirm password" %>
+					</td>
+				</tr>
+				<tr class = "field">		
+					<td>
+						<%= f.text_field :last_name, :placeholder => "Last Name" %>
+					</td>
+				</tr>								
+				<tr class = "field">		
+					<td>
+						<%= f.text_field :contact_phone, :placeholder => "Phone" %>
+					</td>
+				</tr>				
+				<tr class = "field">		
+					<td>
+						<%= f.text_field :contact_fax, :placeholder => "Fax" %>
+					</td>
+				</tr>
+				<tr class = "field">		
+					<td>
+						<%= f.text_field :company_address2, :placeholder => "Street Address 2" %>
+					</td>
+				</tr>				
+				<tr class = "field">		
+					<td>
+						<%= f.text_field :company_state, :placeholder => "State" %>
+					</td>
+				</tr>				
+				<tr class = "field">		
+					<td>
+						<%= f.select :company_country, ['--Select Country--','United States Of America','India'] %>
+					</td>
+				</tr>						
+			</table>
 		</td>
 	</tr>
 	<tr class = "field">
 		<td colspan="2" style="text-align:center;">
 			<%= f.submit "Sign Up"%>
 		</td>		
-	</tr>		
+	</tr>	
 </table>
 <% end %>
 

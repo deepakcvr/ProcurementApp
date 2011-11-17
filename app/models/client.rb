@@ -11,7 +11,7 @@ class Client < ActiveRecord::Base
 
 	validates :login_name, :presence => true,
 						   :length => { :maximum => 50 }	
-	validates :contact_name, :presence => true
+	validates :first_name, :presence => true
 	validates :company_name, :presence => true
 	validates :contact_email, :presence => true,
 							  :format => { :with => email_regex },

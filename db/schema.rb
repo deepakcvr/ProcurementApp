@@ -11,12 +11,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111110115538) do
+ActiveRecord::Schema.define(:version => 20111117094330) do
 
   create_table "clients", :force => true do |t|
     t.string   "login_name"
     t.string   "login_password"
-    t.string   "contact_name"
+    t.string   "first_name"
     t.string   "company_name"
     t.string   "contact_email"
     t.string   "contact_phone"
@@ -30,6 +30,8 @@ ActiveRecord::Schema.define(:version => 20111110115538) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "salt"
+    t.string   "last_name"
+    t.string   "contact_fax"
   end
 
   add_index "clients", ["contact_email"], :name => "index_clients_on_contact_email", :unique => true
