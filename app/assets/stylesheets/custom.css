@@ -9,6 +9,7 @@
 }
 
 body {
+  margin:0;    
   background: #45484d; /* Old browsers */
   background: -moz-linear-gradient(top,  #45484d 0%, #282828 100%); /* FF3.6+ */
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#45484d), color-stop(100%,#282828)); /* Chrome,Safari4+ */
@@ -174,28 +175,14 @@ nav2 ul li a:visited ul {display:block; width:10.0em; position:absolute; z-index
 nav2 ul li a:visited ul li a {display:block; width:10.0em; height:1px; line-height:1.3em; padding:4px 16px 4px 16px; border-left:solid 1px rgb(175,175,175); border-bottom: solid 1px rgb(175,175,175); background-color:white; font-weight:normal;} /*Color subcells normal mode*/
 nav2 ul li a:visited ul li a:visited {text-decoration:none;color:white;} /*Color subcells hovering mode*/
 
-
-a.signup_button {
-  float:right;
-  display: block;
-  text-align: center;
-  width: 80px;
-  color: #fff;
-  background: #595959;
-  font-size: 12px;
-  font-weight: bold;
-  padding: 5px;
-  text-decoration:none;
-}
-
 /*Glossy Tab bar*/
 .box-container{
     position:relative;
     width:100%;
-    margin:0;
+    margin:0px auto;
     _margin-top:0px;
     overflow:hidden;
-    padding:0;    
+    padding:0px;        
     /*-moz-border-radius:15px;
     -webkit-border-radius:15px;*/
   }
@@ -301,10 +288,9 @@ footer table tr td {text-align:center; color:white; font-weight:bold; font-size:
   /*-moz-border-radius:    10px;
   -webkit-border-radius: 10px;
   border-radius:         10px;*/  
-  border:1px solid #D8D8D8;
-  
+  border:1px solid #D8D8D8;  
   background:#FFF;
-  padding:0;  
+  padding:0;    
 }
 .pnlheader{
   height: 40px;
@@ -317,14 +303,17 @@ footer table tr td {text-align:center; color:white; font-weight:bold; font-size:
 .pnlfooter{
   height: 60px;
   background-color:#C0C0C0;
-  color:white;
-  text-align: right;
+  color:white;  
   vertical-align: middle;
-  padding-right: 15px;
-  font-weight:bold;  
+  padding-right: 5px;
+  font-weight:bold;    
   /*-moz-border-radius:    10px;
   -webkit-border-radius: 10px;
   border-radius:         10px;*/
+}
+.pnlfooter a
+{
+	float:right;
 }
 
 .textstyle 
@@ -346,4 +335,45 @@ footer table tr td {text-align:center; color:white; font-weight:bold; font-size:
 	width: 350px; 
 	padding: 0 5px 0 5px;
 	margin-top:5px;
+}
+.customtextstyle
+{
+	background-color:#ffffff;
+	border:1px solid #bbbbbb;
+	color:#000; 
+	height: 25px;
+	width: 524px; 
+	padding: 0 5px 0 5px;
+	margin-top:5px;
+}
+
+a.signup_button 
+{
+  border :1px solid white;
+  padding-left :5px;	  
+  display: block;
+  text-align: center;
+  width: 80px;
+  color: #fff;
+  background: #595959;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 5px;
+  text-decoration:none;
+}
+
+.submitbtn
+{
+	border:1px solid white;		
+	width:auto;	
+	float:right;
+	display: block;
+	text-align: center;				
+	min-width:80px;	
+	color: #fff;
+	background: #595959;
+	font-size: 12px;
+	font-weight: bold;
+	padding:6.5px 10px 6.5px 10px;
+	cursor:pointer;		
 }

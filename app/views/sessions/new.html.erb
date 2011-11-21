@@ -1,44 +1,44 @@
-<p class = "title">Zeetimes Sign In</p>
+<!--<p class = "title">Zeetimes Sign In</p>-->
 <%= form_for :session, :url => sessions_path do |f| %>
 <table align = "center" class="tablepnl" width="400px">
 	<tr>
-		<td class="box-container bg-gray">			
-			    <div class="boxgloss"></div>
+		<td style="margin:0;padding:0;" colspan="2">
+			<div class="box-container bg-gray">
+			    <div class="box-container boxgloss"></div>
 			    <div class="boxcontents brd-gray">
 			    	<%= image_tag("NewUser.png", :alt => "New Account", :class => "round") %>			    	
 			    	<%= label_tag 'signinHeader', 'Sign In'%>
 			    </div>
 			    <div class="clear"></div>			
+			</div>
 		</td>
 	</tr>
 	<tr>
 		<td>&nbsp;</td>
 	</tr>				
-	<tr id="loginUsername">		
-		<td style="text-align:right;padding-right:18px;">
+	<tr>		
+		<td style="text-align:right;padding-right:18px;" colspan="2">
 			<%= f.text_field :username, :placeholder => "Zeetimes Username", :class => "logintextstyle"%>
 		</td>
 	</tr>
-	<tr id="loginPassword">		
-		<td style="text-align:right;padding-right:18px;">
+	<tr>		
+		<td style="text-align:right;padding-right:18px;" colspan="2">
 			<%= f.password_field :password, :placeholder => "Password", :class => "logintextstyle"%>
 		</td>
-	</tr>	
-	<tr class = "field">
-		<td style="text-align:right;padding-right:18px;">
-			<%= f.submit "Sign In"%>
-		</td>		
-	</tr>	
+	</tr>		
 	<tr>
-		<td style="text-left:right;padding-left:18px;">
+		<td style="text-left:right;padding-left:18px;" colspan="2">
 			New user? <%= link_to "Sign up now!", signup_path %> | <%= link_to "Forgot password?", root_path %>
 		</td>
 	</tr>
 	<tr>
 		<td>&nbsp;</td>
 	</tr>
-	<tr>
-		<td class="pnlfooter">
+	<tr class="pnlfooter">
+		<td width="320px">
+			<%= f.submit "Sign In", :class => "submitbtn round"%>
+		</td>
+		<td width="80px">
 			<%= link_to "Cancel", root_path, :class => "signup_button round" %>
 		</td>		
 	</tr>	

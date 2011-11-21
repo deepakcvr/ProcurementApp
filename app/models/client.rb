@@ -40,6 +40,10 @@ class Client < ActiveRecord::Base
   		client = find_by_id(id)
   		(client && client.salt) ? client : nil
   	end
+  	
+  	def self.clientdetails(id)
+  		client = find_by_id(id)
+  	end  	
 	
 	private
 		def encrypt_password

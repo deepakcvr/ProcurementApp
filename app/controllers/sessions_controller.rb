@@ -8,8 +8,9 @@ class SessionsController < ApplicationController
   		flash.now[:error] = "Incorrect Login / Password; please re-try. Your account will be locked after 3 unsuccessful attempts."
   		@title = "Sign In"
   		render 'new'
-  	else
+  	else      
   		sign_in client
+      cookies[:clientid] = client.id      
   		redirect_to root_path
   	end
   end

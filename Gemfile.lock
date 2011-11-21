@@ -118,6 +118,7 @@ PLATFORMS
 DEPENDENCIES
   closure-compiler
   coffee-rails (~> 3.1.0)
+  mail (= 2.3.0)
   pg
   rails (= 3.1.0)
   sass-rails (~> 3.1.0)

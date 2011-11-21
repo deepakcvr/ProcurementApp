@@ -1,2 +1,71 @@
-<h1>Pages#contact</h1>
-<p>Find me in app/views/pages/contact.html.erb</p>
+<%= form_for :page, :url => contact_path do |f| %>
+<table align = "center" class="tablepnl" style="width:550px;">
+	<tr>
+		<td style="margin:0;padding:0;" colspan="2">
+			<div class="box-container bg-gray">
+				<div class="boxgloss"></div>
+			    <div class="boxcontents brd-gray"><%= label_tag 'contactUsHeader', 'Contact Us'%></div>
+			    <div class="clear"></div>
+			</div>    
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2">&nbsp;</td>
+	</tr>	
+	<tr>
+		<td colspan="2">
+			<table border="0" align="center" width="530px">										
+				<tr class = "field">		
+					<td>
+						<%= f.text_field :first_name, :value => @clientdet.try(:first_name), :placeholder => "First Name", :class => "textstyle" %>
+					</td>
+					<td>
+						<%= f.text_field :last_name, :value => @clientdet.try(:last_name), :placeholder => "Last Name", :class => "textstyle" %>
+					</td>
+				</tr>
+				<tr class = "field">							
+					<td colspan="2">
+						<%= f.text_field :company_name, :value => @clientdet.try(:company_name), :placeholder => "Company", :class => "textstyle" %>
+					</td>
+				</tr>
+				<tr class = "field">		
+					<td colspan="2">
+					<%= f.text_field :problemdesc1, :placeholder => "Description of problem", :class => "customtextstyle" %>						
+					</td>					
+				</tr>
+				<tr class = "field">		
+					<td colspan="2">
+					<%= f.text_field :problemdesc2, :placeholder => "Description of problem", :class => "customtextstyle" %>						
+					</td>					
+				</tr>
+				<tr class = "field">		
+					<td colspan="2">
+					<%= f.text_field :problemdesc3, :placeholder => "Description of problem", :class => "customtextstyle" %>						
+					</td>					
+				</tr>											
+				<tr class = "field">		
+					<td colspan="2">
+						<%= f.text_field :contact_phone, :value => @clientdet.try(:contact_phone), :placeholder => "Phone", :class => "textstyle" %>
+					</td>					
+				</tr>
+				<tr class = "field">					
+					<td colspan="2">
+						<%= f.text_field :contact_email, :value => @clientdet.try(:contact_email), :placeholder => "Email", :class => "textstyle" %>
+					</td>					
+				</tr>								
+			</table>
+		</td>		
+	</tr>	
+	<tr>
+		<td colspan="2">&nbsp;</td>
+	</tr>
+	<tr class="pnlfooter">
+		<td width="440px">
+			<%= f.submit "Request Support", :onclick => {:action => "sendmail"}, :class => "submitbtn round"%>
+		</td>
+		<td width="90px;">
+			<%= link_to "Cancel", root_path, :class => "signup_button round" %>
+		</td>		
+	</tr>	
+</table>
+<% end %>
