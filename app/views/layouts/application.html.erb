@@ -29,10 +29,16 @@
       </header>
       <div class="menubar">      
       <nav2>          
-        <ul>
+        <ul id="Mainmenu">
           <li><%= link_to "Home", root_path %></li>
           <li><%= link_to "Sell", sell_path %></li>
-          <li><%= link_to "Buy", buy_path %></li>
+          <li><%= link_to "Buy", buy_path %>
+            <ul>
+              <li>
+                <%= link_to "Porducts", products_path %>
+              </li>
+            </ul>
+          </li>
           <li><%= link_to "Contact Us", contact_path %></li>
         </ul>
       </nav2>

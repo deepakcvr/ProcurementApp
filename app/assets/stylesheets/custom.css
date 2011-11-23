@@ -126,7 +126,7 @@ nav ul li a:hover {
 	margin: 0 auto;
 	height: 40px;
 }
-nav2 {float:left;border:none;width:780px;color:white;height:40px;
+#Mainmenu {float:left;border:none;width:780px;color:white;height:40px;margin:0;padding:0;
   background: #7d7e7d; /* Old browsers */
   background: -moz-linear-gradient(top,  #7d7e7d 0%, #0e0e0e 100%); /* FF3.6+ */
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#7d7e7d), color-stop(100%,#0e0e0e)); /* Chrome,Safari4+ */
@@ -137,43 +137,129 @@ nav2 {float:left;border:none;width:780px;color:white;height:40px;
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d7e7d', endColorstr='#0e0e0e',GradientType=0 ); /* IE6-9 */      
 } 
 
-/*Color navigation bar normal mode*/
-nav2 ul {margin: 0;padding: 0;}
-nav2 ul li {list-style-type: none;display: inline-block;
-  padding: 0.2em 0;float:left; position:relative; z-index:auto !important /*Non-IE6*/; z-index:1000 
-/*IE6*/; border-right:solid 1px rgb(175,175,175);width:120px;}
-nav2 ul li a {float:none !important /*Non-IE6*/; float:left /*IE-6*/; display:block; height:3.1em; line-height:3.1em; padding:0; text-decoration:none;text-align:center; font-weight:bold; color: white;}
-nav2 ul li ul {display:none; border:none;}
-nav2 fieldset {float:right; position:relative; z-index:auto !important /*Non-IE6*/; z-index:1000 /*IE6*/; border:none; padding:8px 8px 0 0;}
-nav2 input.field1 {width:130px; height:16px; padding:2px 0 0 4px; border:1px solid rgb(200,200,200); font-family:verdana,arial,sans-serif; font-size:12px; }
-nav2 input.button1 {width:30px; padding:0px !important /*Non-IE6*/; padding:0 /*IE6*/; background:#6EDCF7; border:solid 1px rgb(150,150,150); text-align:center; font-family:verdana,arial,sans-serif; color:Black; font-size:12px;}
-nav2 input.button1:hover {cursor:pointer; border:solid 1px rgb(80,80,80); background:rgb(220,220,220); color:rgb(80,80,80);}
+#Mainmenu li {
+	margin: 0;
+	padding: 0.2em 0;
+	float: left;
+	position: relative;
+	list-style: none;
+	/*border-right:solid 1px rgb(175,175,175);*/	
+}
+/* main level link */
+#Mainmenu a {
+	font-weight: bold;
+	color: white;
+	text-decoration: none;
+	display: block;	
+	/*-webkit-border-radius: 1.6em;
+	-moz-border-radius: 1.6em;*/
+	text-shadow: 0 1px 1px rgba(0, 0, 0, .3);
+	padding:  8px 40px;
+	text-align:center;
+}
+/* main level link hover */
+#Mainmenu li:hover > a {
+	background: #8D8D8D; /* for non-css3 browsers */
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#8D8D8D', endColorstr='#B2B2B2'); /* for IE */
+	background: -webkit-gradient(linear, left top, left bottom, from(#8D8D8D), to(#B2B2B2)); /* for webkit browsers */
+	background: -moz-linear-gradient(top,  #8D8D8D,  #B2B2B2); /* for firefox 3.6+ */
 
-/*Non-IE6 hovering*/
-nav2 ul li:hover a {background-color:#8D8D8D; text-decoration:none;color:white;} /*Color main cells hovering mode*/
-nav2 ul li:hover ul {display:block; width:10.0em; position:absolute; z-index:999; top:3.0em; margin-top:0.1em; left:0;}
-nav2 ul li:hover ul li a {display:block; width:10.0em; height:auto; line-height:1.3em; margin-left:-1px; padding:4px 16px 4px 16px; border-left:solid 1px rgb(175,175,175); border-bottom: solid 1px rgb(175,175,175); background-color:#8D8D8D; font-weight:normal;color:white;} /*Color subcells normal mode*/
-nav2 ul li:hover ul li a:hover {background-color:#8D8D8D; text-decoration:none;color:white;} /*Color subcells hovering mode*/
+	color: #FFF;	
+	/*-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .2);
+	-moz-box-shadow: 0 1px 1px rgba(0, 0, 0, .2);
+	box-shadow: 0 1px 1px rgba(0, 0, 0, .2);
+	text-shadow: 0 1px 0 rgba(255, 255, 255, .8);*/
+}
+/* sub levels link hover */
+#Mainmenu ul li:hover a, #Mainmenu li:hover li a {
+	background: none;
+	border: none;
+	color: #666;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+}
+#Mainmenu ul a:hover {
+	background: #7d7e7d !important; /* for non-css3 browsers */
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#7d7e7d', endColorstr='#0e0e0e'); /* for IE */
+	background: -webkit-gradient(linear, left top, left bottom, from(#7d7e7d), to(#0e0e0e)) !important; /* for webkit browsers */
+	background: -moz-linear-gradient(top,  #7d7e7d,  #0e0e0e) !important; /* for firefox 3.6+ */
 
-/*IE6 hovering*/
-nav2 table {position:absolute; top:0; left:0; border-collapse:collapse;}
-nav2 ul li a:hover {background-color:#8D8D8D; text-decoration:none;color:white;} /*Color main cells hovering mode*/
-nav2 ul li a:hover ul {display:block; width:10.0em; position:absolute; z-index:999; top:3.1em; top:3.0em; left:0; margin-top:0.1em;}
-nav2 ul li a:hover ul li a {display:block; width:10.0em; height:1px; line-height:1.3em; padding:4px 16px 4px 16px; border-left:solid 1px rgb(175,175,175); border-bottom: solid 1px rgb(175,175,175); background-color:#8D8D8D; font-weight:normal;color:white;} /*Color subcells normal mode*/
-nav2 ul li a:hover ul li a:hover {background-color:#8D8D8D; text-decoration:none;color:white;} /*Color subcells hovering mode*/
+	color: #fff !important;
+	/*-webkit-border-radius: 0;
+	-moz-border-radius: 0;*/
+	text-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+}
+/* level 2 list */
+#Mainmenu ul {
+	background: #ddd; /* for non-css3 browsers */
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#cfcfcf'); /* for IE */
+	background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#cfcfcf)); /* for webkit browsers */
+	background: -moz-linear-gradient(top,  #fff,  #cfcfcf); /* for firefox 3.6+ */
 
-/*Non-IE6 hovering*/
-nav2 ul li:visited a {color:white;} /*Color main cells hovering mode*/
-nav2 ul li:visited ul {display:block; width:10.0em; position:absolute; z-index:999; top:3.0em; margin-top:0.1em; left:0;}
-nav2 ul li:visited ul li a {display:block; width:10.0em; height:auto; line-height:1.3em; margin-left:-1px; padding:4px 16px 4px 16px; border-left:solid 1px rgb(175,175,175); border-bottom: solid 1px rgb(175,175,175); font-weight:normal; color:white;} /*Color subcells normal mode*/
-nav2 ul li:visited ul li a:visited {text-decoration:none; color:white;} /*Color subcells hovering mode*/
-
-/*IE6 hovering*/
-nav2 table {position:absolute; top:0; left:0; border-collapse:collapse;}
-nav2 ul li a:visited {text-decoration:none;color:white;} /*Color main cells hovering mode*/
-nav2 ul li a:visited ul {display:block; width:10.0em; position:absolute; z-index:999; top:3.1em; top:3.0em; left:0; margin-top:0.1em;}
-nav2 ul li a:visited ul li a {display:block; width:10.0em; height:1px; line-height:1.3em; padding:4px 16px 4px 16px; border-left:solid 1px rgb(175,175,175); border-bottom: solid 1px rgb(175,175,175); background-color:white; font-weight:normal;} /*Color subcells normal mode*/
-nav2 ul li a:visited ul li a:visited {text-decoration:none;color:white;} /*Color subcells hovering mode*/
+	display: none;
+	margin: 0;
+	padding: 0px;
+	width: 150px;
+	position: absolute;
+	top: 35px;
+	left: 0;
+	border: solid 1px #b4b4b4;
+	/*-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;*/
+	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, .3);
+	-moz-box-shadow: 0 1px 3px rgba(0, 0, 0, .3);
+	box-shadow: 0 1px 3px rgba(0, 0, 0, .3);
+}
+/* dropdown */
+#Mainmenu li:hover > ul {
+	display: block;
+}
+#Mainmenu ul li {
+	float: none;
+	margin: 0;	
+	padding:0;
+}
+#Mainmenu ul a {
+	font-weight: normal;
+	text-shadow: 0 1px 1px rgba(255, 255, 255, .9);
+}
+/* level 3+ list */
+#Mainmenu ul ul {
+	left: 181px;
+	top: -3px;
+}
+/* rounded corners for first and last child */
+#Mainmenu ul li:first-child > a {
+	/*-webkit-border-top-left-radius: 9px;
+	-moz-border-radius-topleft: 9px;
+	-webkit-border-top-right-radius: 9px;
+	-moz-border-radius-topright: 9px;*/
+}
+#Mainmenu ul li:last-child > a {
+	/*-webkit-border-bottom-left-radius: 9px;
+	-moz-border-radius-bottomleft: 9px;
+	-webkit-border-bottom-right-radius: 9px;
+	-moz-border-radius-bottomright: 9px;*/
+}
+/* clearfix */
+#Mainmenu:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+#Mainmenu {
+	display: inline-block;
+}
+html[xmlns] #Mainmenu {
+	display: block;
+}
+* html #Mainmenu {
+	height: 1%;
+}
 
 /*Glossy Tab bar*/
 .box-container{

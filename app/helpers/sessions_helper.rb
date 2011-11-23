@@ -18,6 +18,7 @@ module SessionsHelper
 
 	def sign_out
 		cookies.delete(:remember_token)
+		cookies.delete(:clientid)
 		self.current_client = nil
 	end
 

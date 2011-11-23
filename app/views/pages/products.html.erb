@@ -1,0 +1,42 @@
+<%= form_for :page, :url => products_path do |f| %>
+
+<table align = "center" class="tablepnl" style="width:550px;">
+	<tr>
+		<td style="margin:0;padding:0;" colspan="2">
+			<div class="box-container bg-gray">
+				<div class="boxgloss"></div>
+			    <div class="boxcontents brd-gray"><%= label_tag 'productsHeader', 'Products'%></div>
+			    <div class="clear"></div>
+			</div>    
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2">&nbsp;</td>
+	</tr>	
+	<tr>
+		<td colspan="2">
+			<table border="0" align="center" width="530px">										
+				<tr class = "field">		
+					<td>
+						<%= f.label :category, :placeholder => "Category", :class => "textstyle" %>
+					</td>
+					<td>
+						<%= f.label :products, :placeholder => "Products", :class => "textstyle" %>
+					</td>
+				</tr>												
+			</table>
+		</td>		
+	</tr>	
+	<tr>
+		<td colspan="2">&nbsp;</td>
+	</tr>
+	<tr class="pnlfooter">
+		<td width="440px">
+			<%= f.submit "Next", :class => "submitbtn round"%>
+		</td>
+		<td width="90px;">
+			<%= link_to "Cancel", root_path, :class => "signup_button round" %>
+		</td>		
+	</tr>	
+</table>
+<% end %>
