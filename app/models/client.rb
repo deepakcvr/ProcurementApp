@@ -2,7 +2,7 @@ require 'digest'
 class Client < ActiveRecord::Base
 	attr_accessor :password
 	email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-	password_regex = /(?=.{8,40})(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$%&+=])/	
+	password_regex = /(?=.{8,40})(?=.*\d)(?=.*[a-z A-Z])/	
 
 	validates :password, :presence => true,
 						 :format => { :with => password_regex },

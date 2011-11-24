@@ -15,13 +15,21 @@
 	</tr>	
 	<tr>
 		<td colspan="2">
-			<table border="0" align="center" width="530px">										
+			<table border="0" align="center" width="530px">
 				<tr class = "field">		
 					<td>
-						<%= f.label :category, :placeholder => "Category", :class => "textstyle" %>
+						<%= f.label :category, "Category" %>
 					</td>
 					<td>
-						<%= f.label :products, :placeholder => "Products", :class => "textstyle" %>
+						<%= f.label :product, "Product" %>
+					</td>
+				</tr>										
+				<tr class = "field">		
+					<td>
+						<%= f.collection_select :category, Category.all, :id, :category_name %>
+					</td>
+					<td>
+						<%= f.collection_select :product, Product.all, :id, :product_name %>
 					</td>
 				</tr>												
 			</table>

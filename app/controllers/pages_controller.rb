@@ -14,6 +14,12 @@ class PagesController < ApplicationController
 
   def products
     @title = "Products"
+    if signed_in?      
+      render 'products'
+    else            
+      flash.now[:error] = "Please sign in first so you can start procurement activities."
+      render 'sessions/new'
+    end    
   end
 
   def contact
@@ -43,7 +49,7 @@ class PagesController < ApplicationController
         @company = @contact.company_name
         @phone = @contact.contact_phone
         ClientMailer.requestsupport_email(@clientname,@subject,@problem,@phone).deliver
-        flash[:success] = "Mail sent. Thank you for your interest."
+        flash.now[:success] = "Mail sent. Thank you for your interest."
       else                   
       end
     end  	

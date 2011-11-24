@@ -11,7 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111117094330) do
+ActiveRecord::Schema.define(:version => 20111124102301) do
+
+  create_table "categories", :force => true do |t|
+    t.string   "category_name"
+    t.string   "category_description"
+    t.boolean  "category_status"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "clients", :force => true do |t|
     t.string   "login_name"
@@ -35,5 +43,14 @@ ActiveRecord::Schema.define(:version => 20111117094330) do
   end
 
   add_index "clients", ["contact_email"], :name => "index_clients_on_contact_email", :unique => true
+
+  create_table "products", :force => true do |t|
+    t.integer  "category_id"
+    t.string   "product_name"
+    t.string   "product_description"
+    t.boolean  "product_status"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
