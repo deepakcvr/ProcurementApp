@@ -51,7 +51,7 @@ header img {
   vertical-align:middle;  
 }
 
-section {
+#frmplaceHolder {
   margin-top: 1em;
   font-size: 120%;
   padding: 20px;
@@ -413,6 +413,16 @@ footer table tr td {text-align:center; color:white; font-weight:bold; font-size:
 	padding: 0 5px 0 5px;
 	margin-top:5px;
 }
+.textstylesmall 
+{
+	background-color:#ffffff;
+	border:1px solid #bbbbbb;
+	color:#000; 
+	height: 25px;
+	width: 150px; 
+	padding: 0 5px 0 5px;
+	margin-top:5px;
+}
 .logintextstyle
 {
 	background-color:#ffffff;
@@ -463,4 +473,143 @@ a.signup_button
 	font-weight: bold;
 	padding:6.5px;
 	cursor:pointer;		
+}
+
+.gray-circle {
+    display: block;
+    height: 45px;
+    width: 45px;
+    position: absolute;    
+    background-color: #7F7F7F;
+    border: 2px solid #ffffff;
+    -moz-border-radius: 80px;    
+    -webkit-border-radius: 80px;
+    -khtml-border-radius: 80px;
+    border-radius: 80px;    
+}
+
+/*Vertical Scrolling Items*/
+
+div.sc_menu_wrapper {
+  position: relative;   
+  height: 200px;
+  /* Make bigger than a photo, because we need a place for a scroll-bar. */
+  width: 260px;
+  margin-top: 0px;
+  overflow: auto;  
+}
+div.sc_menu {
+  padding: 5px 0;  
+}
+.sc_menu table tr td a {
+  display: block;
+  margin-bottom: 5px;
+  width: 150px;
+  text-decoration: none;
+  padding: 5px 0 5px 45px;
+  margin-top: 9px;
+  margin-left:10px;
+  border: 2px rgb(79, 79, 79) solid;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  vertical-align:middle;	
+  /* When image support is turned off */
+  color: #fff;
+  background: #7F7F7F;  
+}
+
+.sc_menu table tr td a:hover {
+  border-color: rgb(130, 130, 130);
+  border-style: dotted;
+}
+.sc_menu table tr td img {
+  display: block;
+  border: none;
+}
+
+.sc_menu_wrapper .loading {
+  position: absolute;
+  top: 50px;
+  left: 10px;
+
+  margin: 0 auto;
+  padding: 10px;
+
+  width: 100px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+
+  text-align: center;
+  color: #fff;
+  border: 1px solid rgb(79, 79, 79);
+  background: #595959;
+}
+
+/*Scrolling option 2*/
+
+.my_class {
+	font-size: 12px;
+	color: #abc;
+	background-color: transparent;
+	border: 2px solid transparent;
+	width: auto;		
+}
+
+.my_class:hover {
+	border: 2px solid #ffffff;
+	/*border: none;*/
+}
+
+.my_class img {
+	height: 48px;
+	width: 48px;
+}
+
+.my_class a 
+{
+  display : block;  
+  width: 100px;
+  text-decoration: none;
+  padding: 5px 0px 5px 45px;  
+  border: 2px rgb(79, 79, 79) solid;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  vertical-align:middle;  	
+  /* When image support is turned off */
+  color: #fff;
+  background: #7F7F7F;
+  
+  margin-bottom: 5px;
+  margin-top: 9px;
+  margin-left:10px;  
+}
+
+#roundrr_container, #roundrr_container2 {
+	position: relative;
+	
+	left: -185px;
+	top: -90px;
+	width: 100px;
+	height: auto;	
+	margin: 0 auto;	
+}
+
+.roundrr_div_item {
+	background-color: none;
+	height: 50px;
+	padding: 40px;
+	color: #234;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	cursor: pointer;
+}
+
+
+.selected{
+
+background-color:red;
+border:2px solid red;
+color:#AABBCC;
+font-size:1.5em;
+
 }

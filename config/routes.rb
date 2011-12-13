@@ -2,6 +2,8 @@ ProcurementApp::Application.routes.draw do
   resources :clients
   resources :pages
   resources :sessions, :only => [:new, :create, :destroy]
+  resources :categories
+  resources :products, :only => [:show, :new, :create, :destroy]
 
   get "sessions/new"
 
@@ -25,7 +27,7 @@ ProcurementApp::Application.routes.draw do
   match '/contact', :to => 'pages#contact'
   match '/buy',   :to => 'pages#buy'
   match '/sell', :to => 'pages#sell'
-  match '/products', :to => 'pages#products'  
+  match '/products', :to => 'categories#new'  
 
   root :to => 'pages#home'
 

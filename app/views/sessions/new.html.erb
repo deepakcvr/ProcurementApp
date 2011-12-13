@@ -1,5 +1,5 @@
 <!--<p class = "title">Zeetimes Sign In</p>-->
-<%= form_for :session, :url => sessions_path do |f| %>
+<%= form_for :session, :url => sessions_path, :remote => true do |f| %>
 <table align = "center" class="tablepnl" width="400px">
 	<tr>
 		<td style="margin:0;padding:0;" colspan="2">
@@ -39,7 +39,7 @@
 			<%= f.submit "Sign In", :class => "submitbtn round"%>
 		</td>
 		<td width="80px">
-			<%= link_to "Cancel", root_path, :class => "signup_button round" %>
+			<%= link_to "Cancel", root_path, :remote => true, :class => "signup_button round" %>
 		</td>		
 	</tr>	
 </table>

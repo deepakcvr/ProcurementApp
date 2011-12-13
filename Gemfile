@@ -1,7 +1,8 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.1.0'
-gem "mail", "2.3.0"
+gem 'mail', '2.3.0'
+gem 'breadcrumbs_on_rails'
 
 #gem 'bcrypt-ruby', '3.0.1-x86-mingw32'
 
@@ -26,7 +27,7 @@ group :assets do
   gem 'uglifier'
 end
 
-#gem 'jquery-rails', '1.0.16'
+gem 'jquery-rails', '1.0.16'#Comment this while deploying to Production
 gem 'closure-compiler'
 
 # Use unicorn as the web server

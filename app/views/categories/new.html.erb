@@ -1,0 +1,131 @@
+<%= form_for @category do |f| %>
+<table align = "center" class="tablepnl" style="width:550px;">
+	<tr>
+		<td style="margin:0;padding:0;" colspan="2">
+			<div class="box-container bg-gray">
+				<div class="boxgloss"></div>
+			    <div class="boxcontents brd-gray"><%= label_tag 'productsHeader', 'Products'%></div>
+			    <div class="clear"></div>
+			</div>    
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2">&nbsp;</td>
+	</tr>	
+	<tr>
+		<td colspan="2">
+			<table border="0" align="center" width="530px">								
+				<tr class = "field">		
+					<td>
+						<%= f.label :category, "Category" %>
+					</td>
+					<td>
+						<%= f.label :product, "Product" %>
+					</td>
+				</tr>										
+				<tr class = "field">		
+					<td>
+						<div class="sc_menu_wrapper" id="category_container">
+						  <div class="sc_menu" id="category_menu">
+						  	<table>
+						  		<tr>
+						  			<td>
+						  				<span class='gray-circle'></span><%= link_to "Mechanical", "#" %>
+						  			</td>
+						  		</tr>
+						  		<tr>
+						  			<td>
+						  				<span class='gray-circle'></span><%= link_to "Electrical", "#" %>
+						  			</td>
+						  		</tr>
+						  		<tr>
+						  			<td>
+						  				<span class='gray-circle'></span><%= link_to "Utilities", "#" %>
+						  			</td>
+						  		</tr>
+						  		<tr>
+						  			<td>
+						  				<span class='gray-circle'></span><%= link_to "House Keeping", "#" %>
+						  			</td>
+						  		</tr>
+						    	<tr>
+						  			<td>
+						  				<span class='gray-circle'></span><%= link_to "Technology", "#" %>
+						  			</td>
+						  		</tr>		    
+						    </table>
+						  </div>
+						</div>
+					</td>
+					<td>
+						<div class="sc_menu_wrapper" id="product_container">
+						  <div class="sc_menu" id="product_menu">
+						  	<table>
+						  		<tr>
+						  			<td>
+						  				<span class='gray-circle'></span><%= link_to "Pipes", "#" %>
+						  			</td>
+						  		</tr>
+						  		<tr>
+						  			<td>
+						  				<span class='gray-circle'></span><%= link_to "Valves", "#" %>
+						  			</td>
+						  		</tr>
+						  		<tr>
+						  			<td>
+						  				<span class='gray-circle'></span><%= link_to "Pipes", "#" %>
+						  			</td>
+						  		</tr>
+						  		<tr>
+						  			<td>
+						  				<span class='gray-circle'></span><%= link_to "Valves", "#" %>
+						  			</td>
+						  		</tr>
+						  		<tr>
+						  			<td>
+						  				<span class='gray-circle'></span><%= link_to "Pipes", "#" %>
+						  			</td>
+						  		</tr>
+						  	</table>						  	
+						  </div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>																
+				<tr>
+					<td style="vertical-align:top;">											
+						<%= f.text_field :category_name, :placeholder => "New Category", :class => "textstylesmall" %></p>
+					</td>
+					<td>
+						<div id = "products">						
+							<%= render :partial => 'product', :collection => @category.products %>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+					</td>
+					<td>
+						<%= link_to_function "Add Product", nil do |page|
+							page.insert_html :bottom, :products, :partial => 'product', :object => Product.new
+						end%>
+					</td>
+				</tr>				
+			</table>			
+		</td>		
+	</tr>	
+	<tr>
+		<td colspan="2">&nbsp;</td>
+	</tr>
+	<tr class="pnlfooter">
+		<td width="440px">
+			<%= f.submit "Next", :class => "submitbtn round"%>
+		</td>
+		<td width="90px;">
+			<%= link_to "Cancel", root_path, :class => "signup_button round" %>
+		</td>		
+	</tr>	
+</table>
+<% end %>

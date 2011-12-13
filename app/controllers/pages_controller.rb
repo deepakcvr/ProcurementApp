@@ -5,24 +5,15 @@ class PagesController < ApplicationController
   end
 
   def sell
-  	@title = "Sell"
+    @title = "Sell"
   end
 
   def buy
-  	@title = "Buy"
-  end
-
-  def products
-    @title = "Products"
-    if signed_in?      
-      render 'products'
-    else            
-      flash.now[:error] = "Please sign in first so you can start procurement activities."
-      render 'sessions/new'
-    end    
-  end
+  	@title = "Buy"    
+  end  
 
   def contact
+    #add_breadcrumb "Contact", contact_path
     @contact = Page.new
     @clientdet = Client.clientdetails(cookies[:clientid])
     if request.post?

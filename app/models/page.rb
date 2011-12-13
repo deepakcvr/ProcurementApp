@@ -1,4 +1,4 @@
-class Page
+class Page  
   include ActiveModel::Validations
   include ActiveModel::Conversion
   extend ActiveModel::Naming

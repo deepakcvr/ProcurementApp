@@ -2,6 +2,7 @@
 <html>
 <head>
   <title><%= title %></title>
+  <%= javascript_include_tag "application" %>  
   <!--[if lt IE 9]>
 	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->    
@@ -35,7 +36,7 @@
           <li><%= link_to "Buy", buy_path %>
             <ul>
               <li>
-                <%= link_to "Porducts", products_path %>
+                <%= link_to "Products", products_path %>
               </li>
             </ul>
           </li>
@@ -43,12 +44,12 @@
         </ul>
       </nav2>
       </div>      
-      <section class="round">
+      <div class="round" id="frmplaceHolder">
         <% flash.each do |key, value| %>
           <div class="flash <%= key %>"><%= value %></div>
         <% end %>
         <%= yield %>
-      </section>
+      </div>
       <footer>
         <table>
           <tr>
