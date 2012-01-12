@@ -15,7 +15,7 @@
 	</tr>	
 	<tr>
 		<td colspan="2">
-			<table border="0" align="center" width="530px">										
+			<table border="0" align="center" style="width:530px;padding-right:0px;">										
 				<tr class = "field">		
 					<td>
 						<%= contact_form.text_field :first_name, :value => @clientdet.try(:first_name), :placeholder => "First Name", :class => "textstyle" %>
@@ -31,19 +31,9 @@
 				</tr>
 				<tr class = "field">		
 					<td colspan="2">
-					<%= contact_form.text_field :problemdesc1, :placeholder => "Description of problem", :class => "customtextstyle" %>						
+					<%= contact_form.text_area :problemdesc, :placeholder => "Description of problem", :class => "textareastyle" %>						
 					</td>					
-				</tr>
-				<tr class = "field">		
-					<td colspan="2">
-					<%= contact_form.text_field :problemdesc2, :placeholder => "Description of problem", :class => "customtextstyle" %>						
-					</td>					
-				</tr>
-				<tr class = "field">		
-					<td colspan="2">
-					<%= contact_form.text_field :problemdesc3, :placeholder => "Description of problem", :class => "customtextstyle" %>						
-					</td>					
-				</tr>											
+				</tr>				
 				<tr class = "field">		
 					<td colspan="2">
 						<%= contact_form.text_field :contact_phone, :value => @clientdet.try(:contact_phone), :placeholder => "Phone", :class => "textstyle" %>

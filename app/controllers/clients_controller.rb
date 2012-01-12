@@ -31,5 +31,4 @@ class ClientsController < ApplicationController
 
   def destroy
   end
-
 end

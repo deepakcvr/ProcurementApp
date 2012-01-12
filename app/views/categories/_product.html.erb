@@ -1,5 +1,14 @@
 <div class = "product">
-	<%= fields_for "category[product_attributes][]", product do |npform|%>
-		<%= npform.text_field :product_name, :placeholder => "New Product", :class => "textstylesmall" %>
-	<% end %>
+	<table border="0" width="100%" >
+		<tr>		
+			<td width="65%">		
+				<%= fields_for "category[product_attributes][]", product do |npform|%>
+					<%= npform.text_field :product_name, :placeholder => "New Product", :class => "textstylesmall" %>
+				<% end %>
+			</td>
+			<td width="45%" align = "left">
+				<%= link_to "add", "#" %>
+			</td>
+		</tr>
+	</table>
 </div>

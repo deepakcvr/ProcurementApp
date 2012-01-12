@@ -2,7 +2,11 @@ ProcurementApp::Application.routes.draw do
   resources :clients
   resources :pages
   resources :sessions, :only => [:new, :create, :destroy]
-  resources :categories
+  resources :categories do
+    collection do
+      get :add_products
+    end
+  end
   resources :products, :only => [:show, :new, :create, :destroy]
 
   get "sessions/new"

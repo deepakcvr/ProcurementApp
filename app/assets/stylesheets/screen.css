@@ -108,6 +108,12 @@ input::-webkit-input-placeholder {
 input:-moz-placeholder {
     color:    #aaa;
 }
+input[type=submit]:disabled
+{
+	color: #595959;
+	background-color: #C3C3C3;
+	cursor: auto;
+}
 /* grid.css */
 .container {width:950px;margin:0 auto;}
 .showgrid {background:url(src/grid.png);}

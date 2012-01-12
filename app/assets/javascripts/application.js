@@ -73,6 +73,45 @@ function makeScrollable(wrapper, scrollable){
 
 $(function()
 {
-  makeScrollable("div#category_container","div#category_menu");
-  makeScrollable("div#product_container","div#product_menu");
+  makeScrollable("#category_container","#category_menu");
+  makeScrollable("#product_container","#product_menu");  
+
+  //Function to change the circle border color when category is selected
+  $('#category_menu table tr td a').click(function(e) {
+        e.preventDefault();
+        var $this = $(this);
+        //alert($this.attr("value"));
+        if($this.attr("value") != ""){
+          var categoryId = $this.attr("value");
+          $.ajax({
+              type: 'GET',
+              url: '/categories/add_products',
+              data: 'category_id='+categoryId,
+              success: function(msg){                
+              }
+          });    
+          //$('#category_selectedcategoryid').attr("value",$this.attr("value")); 
+          //alert($('#category_selectedcategoryid').attr("value"));               
+          var spanclass = '#gc'+$this.text();
+          $('#category_menu table tr td span').removeClass('gray-circle-red');
+          $(spanclass).addClass('gray-circle-red');
+          makeScrollable("#product_container","#product_menu");
+          $('#categorynext').removeAttr('disabled');
+          //return false;
+        }        
+    });  
+  //Function to change the circle border color when product is selected  
+  $('#product_menu table tr td a').click(function(e) {
+        e.preventDefault();
+        var $this = $(this);
+        var spanclass = '#gc'+$this.text();
+        $('#product_menu table tr td span').removeClass('gray-circle-red');
+        $(spanclass).addClass('gray-circle-red');
+    });  
 });
+//function linkclicked(circleid)
+//{
+//  var circle = $(circleid);
+//  $('.sc_menu table tr td span').addClass("gray-circle");  
+//  circle.addClass("gray-circle-red");
+//}  

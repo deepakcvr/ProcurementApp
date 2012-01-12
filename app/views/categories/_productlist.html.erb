@@ -1,0 +1,9 @@
+<table>
+	<% @products.each do |product| %>
+		<tr>
+			<td>
+				<span class='gray-circle' id='gc<%= product.product_name %>'></span><%= link_to product.product_name, "#",  :id => 'lnk'+product.product_name, :value => product.id %>
+			</td>
+		</tr>
+	<% end %>
+</table>

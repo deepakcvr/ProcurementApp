@@ -5,7 +5,7 @@
   font-size:11px;  
   background: #FFFFFF;  
   -webkit-font-smoothing: subpixel-antialiased;
-  -webkit-font-smoothing: antialiased;  
+  -webkit-font-smoothing: antialiased;    
 }
 
 body {
@@ -423,6 +423,14 @@ footer table tr td {text-align:center; color:white; font-weight:bold; font-size:
 	padding: 0 5px 0 5px;
 	margin-top:5px;
 }
+
+.textareastyle
+{
+	border:1px solid #bbbbbb;
+	height: 150px;
+	width: 98%;
+	padding: 5px 5px 5px 5px;
+}
 .logintextstyle
 {
 	background-color:#ffffff;
@@ -477,26 +485,47 @@ a.signup_button
 
 .gray-circle {
     display: block;
-    height: 45px;
-    width: 45px;
+    height: 35px;
+    width: 35px;
     position: absolute;    
     background-color: #7F7F7F;
     border: 2px solid #ffffff;
-    -moz-border-radius: 80px;    
-    -webkit-border-radius: 80px;
-    -khtml-border-radius: 80px;
-    border-radius: 80px;    
+    -moz-border-radius: 70px;    
+    -webkit-border-radius: 70px;
+    -khtml-border-radius: 70px;
+    border-radius: 70px;        
+}
+
+.gray-circle-red {
+    display: block;
+    height: 35px;
+    width: 35px;
+    position: absolute;    
+    background-color: #7F7F7F;
+    border: 2px solid #EE2128;
+    -moz-border-radius: 70px;    
+    -webkit-border-radius: 70px;
+    -khtml-border-radius: 70px;
+    border-radius: 70px;        
 }
 
 /*Vertical Scrolling Items*/
 
 div.sc_menu_wrapper {
   position: relative;   
-  height: 200px;
+  height: 180px;
   /* Make bigger than a photo, because we need a place for a scroll-bar. */
   width: 260px;
   margin-top: 0px;
-  overflow: auto;  
+  overflow: auto;
+  /*-moz-box-shadow: 0 10px 8px -3px #888;
+  -webkit-box-shadow: 0 10px 8px -3px #888;
+  box-shadow: 0 10px 8px -3px #888;*/
+  border-top:1px solid #E1E1E1;
+  border-bottom:1px solid #E1E1E1;
+  -moz-box-shadow: 0 25px 38px -15px #E1E1E1, 0px -25px 38px -15px #E1E1E1;
+  -webkit-box-shadow: 0 25px 38px -15px #E1E1E1, 0px -25px 38px -15px #E1E1E1;
+  box-shadow: 0 25px 38px -15px #E1E1E1, 0px -25px 38px -15px #E1E1E1;
 }
 div.sc_menu {
   padding: 5px 0;  
@@ -506,10 +535,9 @@ div.sc_menu {
   margin-bottom: 5px;
   width: 150px;
   text-decoration: none;
-  padding: 5px 0 5px 45px;
-  margin-top: 9px;
-  margin-left:10px;
-  border: 2px rgb(79, 79, 79) solid;
+  padding: 2px 0 2px 35px;
+  margin-top: 7px;
+  margin-left:10px;  
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   vertical-align:middle;	
@@ -517,9 +545,12 @@ div.sc_menu {
   color: #fff;
   background: #7F7F7F;  
 }
-
 .sc_menu table tr td a:hover {
   border-color: rgb(130, 130, 130);
+  border-style: dotted;
+}
+.sc_menu table tr td a:active {
+  border-color: red;
   border-style: dotted;
 }
 .sc_menu table tr td img {
@@ -585,8 +616,7 @@ div.sc_menu {
 }
 
 #roundrr_container, #roundrr_container2 {
-	position: relative;
-	
+	position: relative;	
 	left: -185px;
 	top: -90px;
 	width: 100px;

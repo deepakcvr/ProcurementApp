@@ -1,0 +1,14 @@
+<div class = "category">
+	<table border="0" width="100%" >
+		<tr>		
+			<td width="65%">		
+				<%= fields_for "category[]", category do |ncform|%>
+					<%= ncform.text_field :category_name, :placeholder => "New Category", :class => "textstylesmall" %>
+				<% end %>
+			</td>
+			<td width="45%" align = "left">
+				<%= link_to "add", "#" %>
+			</td>
+		</tr>
+	</table>
+</div>

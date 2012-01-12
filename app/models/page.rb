@@ -4,13 +4,13 @@ class Page
   extend ActiveModel::Naming
   
   attr_accessor :first_name, :last_name, :company_name, :problemdesc1, :contact_email
-  attr_accessor :problemdesc1, :problemdesc2, :problemdesc3
+  attr_accessor :problemdesc
   attr_accessor :contact_phone, :contact_email
   
   #Validations goes here
   validates :first_name, :presence => true
   validates :company_name, :presence => true
-  validates :problemdesc1, :presence => true  
+  validates :problemdesc, :presence => true  
   validates :contact_email, :presence => true
   
   def initialize(attributes = {})

@@ -1,10 +1,11 @@
 <%= form_for @category do |f| %>
+<%= hidden_field_tag "selectedcategory", "1" %>
 <table align = "center" class="tablepnl" style="width:550px;">
 	<tr>
 		<td style="margin:0;padding:0;" colspan="2">
 			<div class="box-container bg-gray">
 				<div class="boxgloss"></div>
-			    <div class="boxcontents brd-gray"><%= label_tag 'productsHeader', 'Products'%></div>
+			    <div class="boxcontents brd-gray"><%= label_tag 'productsHeader', 'Products & Services'%></div>
 			    <div class="clear"></div>
 			</div>    
 		</td>
@@ -14,7 +15,7 @@
 	</tr>	
 	<tr>
 		<td colspan="2">
-			<table border="0" align="center" width="530px">								
+			<table border="0" align="center" width="530px">
 				<tr class = "field">		
 					<td>
 						<%= f.label :category, "Category" %>
@@ -22,97 +23,64 @@
 					<td>
 						<%= f.label :product, "Product" %>
 					</td>
-				</tr>										
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>													
 				<tr class = "field">		
 					<td>
 						<div class="sc_menu_wrapper" id="category_container">
 						  <div class="sc_menu" id="category_menu">
-						  	<table>
-						  		<tr>
-						  			<td>
-						  				<span class='gray-circle'></span><%= link_to "Mechanical", "#" %>
-						  			</td>
-						  		</tr>
-						  		<tr>
-						  			<td>
-						  				<span class='gray-circle'></span><%= link_to "Electrical", "#" %>
-						  			</td>
-						  		</tr>
-						  		<tr>
-						  			<td>
-						  				<span class='gray-circle'></span><%= link_to "Utilities", "#" %>
-						  			</td>
-						  		</tr>
-						  		<tr>
-						  			<td>
-						  				<span class='gray-circle'></span><%= link_to "House Keeping", "#" %>
-						  			</td>
-						  		</tr>
-						    	<tr>
-						  			<td>
-						  				<span class='gray-circle'></span><%= link_to "Technology", "#" %>
-						  			</td>
-						  		</tr>		    
+						  	<table>						  		
+						  		<% @categorylist = Category.all
+						  			@categorylist.each do |category| %>
+							  		<tr>
+							  			<td>
+							  				<span class='gray-circle' id='gc<%= category.category_name %>'></span><%= link_to category.category_name, "#", :id => 'lnk'+category.category_name, :value => category.id %>							  			
+							  			</td>
+							  		</tr>
+						  		<% end %>	  				    
 						    </table>
 						  </div>
 						</div>
-					</td>
-					<td>
+					</td>					
+					<td>						
 						<div class="sc_menu_wrapper" id="product_container">
-						  <div class="sc_menu" id="product_menu">
-						  	<table>
-						  		<tr>
-						  			<td>
-						  				<span class='gray-circle'></span><%= link_to "Pipes", "#" %>
-						  			</td>
-						  		</tr>
-						  		<tr>
-						  			<td>
-						  				<span class='gray-circle'></span><%= link_to "Valves", "#" %>
-						  			</td>
-						  		</tr>
-						  		<tr>
-						  			<td>
-						  				<span class='gray-circle'></span><%= link_to "Pipes", "#" %>
-						  			</td>
-						  		</tr>
-						  		<tr>
-						  			<td>
-						  				<span class='gray-circle'></span><%= link_to "Valves", "#" %>
-						  			</td>
-						  		</tr>
-						  		<tr>
-						  			<td>
-						  				<span class='gray-circle'></span><%= link_to "Pipes", "#" %>
-						  			</td>
-						  		</tr>
-						  	</table>						  	
-						  </div>
+							<div class="sc_menu" id="product_menu">							
+									Select a category...						  							  										
+							</div>
 						</div>
 					</td>
 				</tr>
 				<tr>
 					<td>&nbsp;</td>
-				</tr>																
+				</tr>
 				<tr>
-					<td style="vertical-align:top;">											
-						<%= f.text_field :category_name, :placeholder => "New Category", :class => "textstylesmall" %></p>
+					<td style = "vertical-align: top; padding-left: 8px;">
+						<div id = "newcategory">
+							<%= render :partial => 'category' %>
+						</div>
 					</td>
-					<td>
-						<div id = "products">						
+					<td style = "vertical-align: top; padding-left: 8px;">
+						<div id = "newproducts">										
 							<%= render :partial => 'product', :collection => @category.products %>
 						</div>
 					</td>
 				</tr>
 				<tr>
-					<td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+				<!--<tr>
+					<td style = "vertical-align: top; padding-left: 11px;">
+						<%= link_to_function "New Category", "jQuery('#newcategory').append('#{escape_javascript render(:partial => 'category',:object => @category)}')" %>
 					</td>
-					<td>
-						<%= link_to_function "Add Product", nil do |page|
-							page.insert_html :bottom, :products, :partial => 'product', :object => Product.new
-						end%>
+					<td style = "vertical-align: top; padding-left: 11px;">
+						<%= link_to_function "New Product", "jQuery('#newproducts').append('#{escape_javascript render(:partial => 'product',:object => Product.new)}')" %>
 					</td>
-				</tr>				
+				</tr>-->				
 			</table>			
 		</td>		
 	</tr>	
@@ -121,11 +89,11 @@
 	</tr>
 	<tr class="pnlfooter">
 		<td width="440px">
-			<%= f.submit "Next", :class => "submitbtn round"%>
+			<%= f.submit "Next", :id => "categorynext", :disabled => true, :class => "submitbtn round"%>
 		</td>
 		<td width="90px;">
 			<%= link_to "Cancel", root_path, :class => "signup_button round" %>
 		</td>		
 	</tr>	
 </table>
-<% end %>
+<% end %> 

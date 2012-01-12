@@ -30,12 +30,11 @@ class PagesController < ApplicationController
         @contact.contact_phone = @clientdet.contact_phone
         @contact.contact_email = @clientdet.contact_email
       end
-      @contact.problemdesc1 = params[:page][:problemdesc1]
-      @contact.problemdesc2 = params[:page][:problemdesc2]
-      @contact.problemdesc3 = params[:page][:problemdesc3]
+      @contact.problemdesc = params[:page][:problemdesc]      
       if @contact.valid?
         @subject = "Ticket #xxxx"
-        @problem = @contact.problemdesc1<<"\n"<<@contact.problemdesc2<<"\n"<<@contact.problemdesc3    
+        #@problem = @contact.problemdesc1<<"\n"<<@contact.problemdesc2<<"\n"<<@contact.problemdesc3
+        @problem = @contact.problemdesc
         @clientname = @contact.first_name
         @company = @contact.company_name
         @phone = @contact.contact_phone
