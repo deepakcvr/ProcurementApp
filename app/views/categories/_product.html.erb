@@ -5,10 +5,7 @@
 				<%= fields_for "category[product_attributes][]", product do |npform|%>
 					<%= npform.text_field :product_name, :placeholder => "New Product", :class => "textstylesmall" %>
 				<% end %>
-			</td>
-			<td width="45%" align = "left">
-				<%= link_to "add", "#" %>
-			</td>
+			</td>			
 		</tr>
 	</table>
 </div>

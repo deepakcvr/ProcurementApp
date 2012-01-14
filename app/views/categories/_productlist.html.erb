@@ -1,9 +1,17 @@
 <table>
-	<% @products.each do |product| %>
+	<% if @products.blank? %>
 		<tr>
 			<td>
-				<span class='gray-circle' id='gc<%= product.product_name %>'></span><%= link_to product.product_name, "#",  :id => 'lnk'+product.product_name, :value => product.id %>
+				<%= label_tag "No Products available." %>
 			</td>
 		</tr>
+	<% else %>
+		<% @products.each do |product| %>
+			<tr>
+				<td>
+					<span class='gray-circle' id='gc<%= product.product_name.gsub(/ /,'') %>'></span><%= link_to product.product_name, "#",  :id => 'lnk'+product.product_name.gsub(/ /,''), :value => product.id %>
+				</td>
+			</tr>
+		<% end %>
 	<% end %>
 </table>

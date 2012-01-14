@@ -376,7 +376,7 @@ footer table tr td {text-align:center; color:white; font-weight:bold; font-size:
   -webkit-border-radius: 10px;
   border-radius:         10px;*/  
   border:1px solid #D8D8D8;  
-  background:#FFF;
+  background:#ffffff;
   padding:0;    
 }
 .pnlheader{
@@ -483,6 +483,22 @@ a.signup_button
 	cursor:pointer;		
 }
 
+.submitbtnsmall
+{
+  border:1px solid white;   
+  width:auto; 
+  float:left;
+  display: block;
+  text-align: center;       
+  min-width:40px; 
+  color: #fff;
+  background: #595959;
+  font-size: 12px;
+  font-weight: normal;
+  padding:4px;
+  cursor:pointer;   
+}
+
 .gray-circle {
     display: block;
     height: 35px;
@@ -560,8 +576,8 @@ div.sc_menu {
 
 .sc_menu_wrapper .loading {
   position: absolute;
-  top: 50px;
-  left: 10px;
+  top: 65px;
+  left: 65px;
 
   margin: 0 auto;
   padding: 10px;

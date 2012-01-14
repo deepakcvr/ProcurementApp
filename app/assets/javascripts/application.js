@@ -92,19 +92,19 @@ $(function()
           });    
           //$('#category_selectedcategoryid').attr("value",$this.attr("value")); 
           //alert($('#category_selectedcategoryid').attr("value"));               
-          var spanclass = '#gc'+$this.text();
+          var spanclass = '#gc'+$this.text().replace(/ /g,'');          
           $('#category_menu table tr td span').removeClass('gray-circle-red');
           $(spanclass).addClass('gray-circle-red');
           makeScrollable("#product_container","#product_menu");
           $('#categorynext').removeAttr('disabled');
           //return false;
         }        
-    });  
+    });      
   //Function to change the circle border color when product is selected  
-  $('#product_menu table tr td a').click(function(e) {
+  $('#product_menu table tr td a').click(function(e) {        
         e.preventDefault();
         var $this = $(this);
-        var spanclass = '#gc'+$this.text();
+        var spanclass = '#gc'+$this.text().replace(/ /g,'');
         $('#product_menu table tr td span').removeClass('gray-circle-red');
         $(spanclass).addClass('gray-circle-red');
     });  

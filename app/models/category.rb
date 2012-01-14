@@ -1,5 +1,7 @@
 class Category < ActiveRecord::Base
 	has_many :products
+
+	#attr_accessor :category_name, :category_description, :category_status
 	
 	#attr_accessor :selectedcategoryid		
 

@@ -18,10 +18,10 @@
 			<table border="0" align="center" width="530px">
 				<tr class = "field">		
 					<td>
-						<%= f.label :category, "Category" %>
+						<%= label_tag "Category" %>
 					</td>
 					<td>
-						<%= f.label :product, "Product" %>
+						<%= label_tag "Product" %>
 					</td>
 				</tr>
 				<tr>
@@ -36,7 +36,7 @@
 						  			@categorylist.each do |category| %>
 							  		<tr>
 							  			<td>
-							  				<span class='gray-circle' id='gc<%= category.category_name %>'></span><%= link_to category.category_name, "#", :id => 'lnk'+category.category_name, :value => category.id %>							  			
+							  				<span class='gray-circle' id='gc<%= category.category_name.gsub(/ /,'') %>'></span><%= link_to category.category_name, "#", :id => 'lnk'+category.category_name.gsub(/ /,''), :value => category.id %>							  			
 							  			</td>
 							  		</tr>
 						  		<% end %>	  				    
@@ -47,7 +47,7 @@
 					<td>						
 						<div class="sc_menu_wrapper" id="product_container">
 							<div class="sc_menu" id="product_menu">							
-									Select a category...						  							  										
+									<%= label_tag "Select a category..." %>						  							  										
 							</div>
 						</div>
 					</td>
@@ -56,15 +56,32 @@
 					<td>&nbsp;</td>
 				</tr>
 				<tr>
-					<td style = "vertical-align: top; padding-left: 8px;">
-						<div id = "newcategory">
-							<%= render :partial => 'category' %>
-						</div>
-					</td>
-					<td style = "vertical-align: top; padding-left: 8px;">
-						<div id = "newproducts">										
-							<%= render :partial => 'product', :collection => @category.products %>
-						</div>
+					<td style = "vertical-align: top; padding-left: 8px;" colspan = "2">
+						<table border="0" width="100%" >
+							<tr>
+								<td width="25%">
+									<div id = "newcategory">
+										<div class = "category">
+											<table border="0" width="100%" >
+												<tr>		
+													<td>	
+														<%= f.text_field :category_name, :placeholder => "New Category", :class => "textstylesmall" %>
+													</td>										
+												</tr>
+											</table>
+										</div>
+									</div>
+								</td>
+								<td style = "vertical-align: top;"  width="25%">
+									<div id = "newproducts">										
+										<%= render :partial => 'product', :collection => @category.products %>
+									</div>
+								</td>
+								<td width="50%">
+									<%= f.submit "add", :class => "submitbtnsmall round" %>
+								</td>
+							</tr>
+						</table>
 					</td>
 				</tr>
 				<tr>
